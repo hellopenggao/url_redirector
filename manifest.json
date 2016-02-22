@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "url_shazam",
+  "version": "1.0",
+  "description": "重定向匹配正则表达式的url",
+  "icons": {
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "128": "icon.png"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+
+  "permissions": [
+    "<all_urls>",
+    "storage",
+    "webNavigation",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking"
+  ]
+}

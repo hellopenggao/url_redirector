@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>option</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+    <link rel="stylesheet" href="material.indigo-pink.min.css">
+    <script defer src="material.min.js"></script>
     <script src="jquery-2.2.0.min.js"></script>
     <style type="text/css">.container {
         margin-left: auto;
@@ -23,36 +23,36 @@
 <div class="container" style="width: 80%;">
     <form action="#" style="display:inline;">
         <div class="mdl-textfield mdl-js-textfield" style="width: 8%;">
-            <input class="mdl-textfield__input" type="text" id="sample0">
-            <label class="mdl-textfield__label" for="sample0">这里起个名字</label>
+            <input class="mdl-textfield__input" type="text" id="name_input">
+            <label class="mdl-textfield__label" for="name_input">这里起个名字</label>
         </div>
     </form>
     <form action="#" style="display:inline;">
         <div class="mdl-textfield mdl-js-textfield" style="width: 44%;">
-            <input class="mdl-textfield__input" type="text" id="sample1">
-            <label class="mdl-textfield__label" for="sample1">这里输入正则表达式</label>
+            <input class="mdl-textfield__input" type="text" id="regexp_input">
+            <label class="mdl-textfield__label" for="regexp_input">这里输入正则表达式</label>
         </div>
     </form>
     <form action="#" style="display:inline;">
         <div class="mdl-textfield mdl-js-textfield" style="width: 44%;">
-            <input class="mdl-textfield__input" type="text" id="sample2">
-            <label class="mdl-textfield__label" for="sample2">这里输入目标URL</label>
+            <input class="mdl-textfield__input" type="text" id="url_input">
+            <label class="mdl-textfield__label" for="url_input">这里输入目标URL</label>
         </div>
     </form>
-    <button class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">mood</i>
+    <button class="mdl-button mdl-js-button mdl-button--icon" id="save_button">
+        <i class="material-icons" >save</i>
     </button>
 </div>
 
 
 <!--已添加条目-->
 <div class="container" style="width: 80%;">
-    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 100%;">
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 100%;" id="saved_data_table">
 
-        <tbody>
+        <tbody id="saved_data_table_body">
         <tr>
             <td>
-                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-checked is-upgraded" for="checkbox-1">
                     <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
                 </label>
             </td>
@@ -63,7 +63,7 @@
             <td style="width: 40%;text-align: left">http://www.baidu.com</td>
             <td>
                 <button class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">mood</i>
+                    <i class="material-icons">delete</i>
                 </button>
             </td>
         </tr>
@@ -71,5 +71,6 @@
         </tbody>
     </table>
 </div>
+<script src="option.js"></script>
 </body>
 </html>

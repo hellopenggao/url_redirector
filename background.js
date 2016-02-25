@@ -64,6 +64,9 @@ chrome.storage.onChanged.addListener(function (changes, sync) {
 chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
     if (tabId == optionTabId) {
         spliceTable(regexpTable)
+        chrome.storage.sync.set({'regexp_data': regexpTable}, function () {
+
+        })
     }
     console.log(regexpTable)
 })

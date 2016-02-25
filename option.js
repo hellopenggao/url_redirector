@@ -5,11 +5,11 @@ function assembleRow() {
         + '<td><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect switch_item" for="switch-' + arguments[1] + '">'
         + '<input type="checkbox" id="switch-' + arguments[1] + '" class="mdl-switch__input" ' + isChecked + '>'
         + '</label></td>'
-        + '<td style="width:10%;text-align:left"><input style="border-bottom:0" class="mdl-textfield__input" type="text" id="item_name' + arguments[1] + '" readonly></td>'
+        + '<td style="width:14%;text-align:left"><input style="border-bottom:0" class="mdl-textfield__input" type="text" id="item_name' + arguments[1] + '" readonly></td>'
         + '<td>|</td>'
-        + '<td style="width:40%;text-align:left"><input style="border-bottom:0" class="mdl-textfield__input" type="text" id="item_regexp' + arguments[1] + '" readonly></td>'
+        + '<td style="width:38%;text-align:left"><input style="border-bottom:0" class="mdl-textfield__input" type="text" id="item_regexp' + arguments[1] + '" readonly></td>'
         + '<td>|</td>'
-        + '<td style="width:40%;text-align: left"><input style="border-bottom:0" class="mdl-textfield__input" type="text" id="item_url' + arguments[1] + '" readonly></td>'
+        + '<td style="width:38%;text-align: left"><input style="border-bottom:0" class="mdl-textfield__input" type="text" id="item_url' + arguments[1] + '" readonly></td>'
         + '<td><button class="mdl-button mdl-js-button mdl-button--icon" id="delete_item' + arguments[1] + '">'
         + '<i class="material-icons">delete</i>'
         + '</button></td>'
@@ -52,7 +52,7 @@ $("#save_button").click(function () {
 
 
 //example
-var example=[["百度首页转搜狗首页", "", "", "checked"], ["百度", "", "", "unchecked"]]
+var example=[["使用说明", "这里填入正则表达式，地址栏和页面所有的请求都可以去匹配", "重定向的地址", "unchecked"]]
 
 onload = function () {
     chrome.storage.sync.get({'regexp_data': null}, function (result) {

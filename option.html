@@ -5,18 +5,20 @@
     <title>option</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="material.indigo-pink.min.css">
+    <link rel="stylesheet" href="title_effect.css">
     <script defer src="material.min.js"></script>
     <script src="jquery-2.2.0.min.js"></script>
-    <style type="text/css">.container {
-        margin-left: auto;
-        margin-right: auto
-    }</style>
+    <script src="js/prefixfree.min.js"></script>
 </head>
-<body>
+<body bgcolor="#ece4d9">
 <!--标题-->
-<div class="container" style="margin-left: auto;margin-right: auto;text-align: center">
+<div class="container" style="width: 100%;text-align: center">
 
-    <h3>This is a heading</h3>
+    <h1 class="header header--raiseUp header--shadow">URL-Shazam
+        <a href="https://github.com/hellopenggao/url_shazam">
+            <img src="icon.png" style="width: 64px;height: 64px" class="mdl-button mdl-js-button mdl-button--icon">
+        </a>
+    </h1>
 </div>
 
 <!--添加条目-->
@@ -40,33 +42,16 @@
         </div>
     </form>
     <button class="mdl-button mdl-js-button mdl-button--icon" id="save_button">
-        <i class="material-icons" >save</i>
+        <i class="material-icons">save</i>
     </button>
 </div>
 
 
 <!--已添加条目-->
 <div class="container" style="width: 80%;">
-    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 100%;" id="saved_data_table">
-
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 100%;"
+           id="saved_data_table">
         <tbody id="saved_data_table_body">
-        <tr>
-            <td>
-                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-checked is-upgraded" for="checkbox-1">
-                    <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
-                </label>
-            </td>
-            <td style="width: 10%;text-align: left">eclipse log转换</td>
-            <td>|</td>
-            <td style="width: 40%;text-align: left">cmewcfef</td>
-            <td>|</td>
-            <td style="width: 40%;text-align: left">http://www.baidu.com</td>
-            <td>
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">delete</i>
-                </button>
-            </td>
-        </tr>
 
         </tbody>
     </table>

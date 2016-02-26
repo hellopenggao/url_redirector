@@ -26,14 +26,22 @@ chrome.webRequest.onBeforeRequest.addListener(
             if (regexpTable[i][3] == "checked") {
                 var patt = new RegExp(regexpTable[i][1])
                 if (regexpTable[i][1] == info.url || patt.test(info.url)) {
-                    var decode_url = decodeURIComponent(patt.exec(info.url))
+                    var regexp_url = patt.exec(info.url)
                     if (regexpTable[i][2] == info.url)
                         return {'cancel': false}
                     else if (regexpTable[i][2] == "shazam") {
-                        if (decode_url == info.url)
+                        if (regexp_url == info.url)
                             return {'cancel': false}
-                        else
-                            return {redirectUrl: decode_url}
+                        else {
+                            if (regexp_url.indexOf("http%3A") == 0 || regexp_url.indexOf("https%3A") == 0 || regexp_url.indexOf("file%3A") == 0)
+                                return {redirectUrl: decodeURIComponent(regexp_url)}
+                            else
+                            {
+                                //console.log(info.url)
+                                //console.log(regexp_url)
+                                return {redirectUrl: regexp_url}
+                            }
+                        }
                     }
                     else
                         return {redirectUrl: regexpTable[i][2]}
@@ -58,16 +66,22 @@ chrome.webNavigation.onBeforeNavigate.addListener(function (data) {
         if (regexpTable[i][3] == "checked") {
             var patt = new RegExp(regexpTable[i][1])
             if (regexpTable[i][1] == data.url || patt.test(data.url)) {
-                var decode_url = decodeURIComponent(patt.exec(data.url))
-                console.log(decode_url)
+                var regexp_url = patt.exec(data.url)
+                console.log(regexp_url)
                 if (regexpTable[i][2] == data.url)
                     return
                 else if (regexpTable[i][2] == "shazam") {
-                    if (decode_url == data.url)
+                    if (regexp_url == data.url)
                         return
-                    else
-                        chrome.tabs.update(null, {url: decode_url}, function () {
-                        })
+                    else {
+                        if (regexp_url.indexOf("http%3A") == 0 || regexp_url.indexOf("https%3A") == 0 || regexp_url.indexOf("file%3A") == 0)
+                            chrome.tabs.update(null, {url: decodeURIComponent(regexp_url)}, function () {
+                            })
+                        else
+                            chrome.tabs.update(null, {url: regexp_url}, function () {
+                            })
+                    }
+
                 }
                 else
                     chrome.tabs.update(null, {url: regexpTable[i][2]}, function () {

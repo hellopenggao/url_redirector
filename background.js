@@ -23,8 +23,12 @@ chrome.webRequest.onBeforeRequest.addListener(
                 continue
             if (regexpTable[i][3] == "checked") {
                 var patt = new RegExp(regexpTable[i][1])
-                if (patt.test(info.url))
-                    return {redirectUrl: regexpTable[i][2]}
+                if (patt.test(info.url)) {
+                    if (regexpTable[i][2] == "shazam")
+                        return {redirectUrl: patt.exec(info.url)}
+                    else
+                        return {redirectUrl: regexpTable[i][2]}
+                }
             }
         }
         return {'cancel': false}
@@ -44,9 +48,14 @@ chrome.webNavigation.onBeforeNavigate.addListener(function (data) {
             continue
         if (regexpTable[i][3] == "checked") {
             var patt = new RegExp(regexpTable[i][1])
-            if (patt.test(data.url))
-                chrome.tabs.update(null, {url: regexpTable[i][2]}, function () {
-                })
+            if (patt.test(data.url)) {
+                if (regexpTable[i][2] == "shazam")
+                    chrome.tabs.update(null, {url: patt.exec(data.url)}, function () {
+                    })
+                else
+                    chrome.tabs.update(null, {url: regexpTable[i][2]}, function () {
+                    })
+            }
         }
     }
 })

@@ -52,13 +52,18 @@ $("#save_button").click(function () {
 
 
 //example
-var example=[["使用说明", "这里填入正则表达式，地址栏和页面所有的请求都可以去匹配", "重定向的地址", "unchecked"]]
+var example = [
+    ["example 2", "https://[a-z]*.google.com", "shazam", "unchecked"],
+    ["example 1", "https://www.google.com.hk", "https://www.google.com", "checked"],
+    ["direction for use", "here input a regular expression,which will match omnibox and any request in the page."
+        , "here input redirect url，or input 'shazam' to redirect to the url that back from regular expression.", "unchecked"]
+]
 
 onload = function () {
     chrome.storage.sync.get({'regexp_data': null}, function (result) {
         var data = result.regexp_data
         console.log(data)
-        if (data == null||data.length==0)
+        if (data == null || data.length == 0)
             data = example
         for (var i = 0; i < data.length; i++) {
             if (data[i] == undefined)

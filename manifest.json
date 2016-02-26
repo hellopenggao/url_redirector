@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "url_shazam",
   "version": "1.0",
-  "description": "重定向匹配正则表达式的url",
+  "description": "redirect url through regular expression",
   "icons": {
     "128": "icon.png"
   },

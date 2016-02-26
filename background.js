@@ -18,14 +18,16 @@ chrome.browserAction.onClicked.addListener(function (tab) {
 //重定向非地址栏
 chrome.webRequest.onBeforeRequest.addListener(
     function (info) {
+        if (info.url == chrome.runtime.getURL('option.html'))
+            return {'cancel': false}
         for (var i = 0; i < regexpTable.length; i++) {
             if (regexpTable[i] == undefined)
                 continue
             if (regexpTable[i][3] == "checked") {
                 var patt = new RegExp(regexpTable[i][1])
-                if (patt.test(info.url)) {
+                if (regexpTable[i][1]==info.url||patt.test(info.url)) {
                     if (regexpTable[i][2] == "shazam")
-                        return {redirectUrl: patt.exec(info.url)}
+                        return {redirectUrl: decodeURI(patt.exec(info.url))}
                     else
                         return {redirectUrl: regexpTable[i][2]}
                 }
@@ -48,9 +50,9 @@ chrome.webNavigation.onBeforeNavigate.addListener(function (data) {
             continue
         if (regexpTable[i][3] == "checked") {
             var patt = new RegExp(regexpTable[i][1])
-            if (patt.test(data.url)) {
+            if (regexpTable[i][1]==data.url||patt.test(data.url)) {
                 if (regexpTable[i][2] == "shazam")
-                    chrome.tabs.update(null, {url: patt.exec(data.url)}, function () {
+                    chrome.tabs.update(null, {url: decodeURI(patt.exec(data.url))}, function () {
                     })
                 else
                     chrome.tabs.update(null, {url: regexpTable[i][2]}, function () {

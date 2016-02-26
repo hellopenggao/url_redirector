@@ -1,4 +1,5 @@
 ![image](https://github.com/hellopenggao/url_shazam/blob/master/example_icon.png)url_shazam<br/>
+=====
 this chrome extension help you redirect url through regular expression.<br/>
 you can input a regular expression,which will match omnibox and any request in the page.<br/>
 or input 'shazam' to redirect to the url that back from regular expression.<br/>

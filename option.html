@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <title>option</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="material.indigo-pink.min.css">
-    <link rel="stylesheet" href="title_effect.css">
-    <script defer src="material.min.js"></script>
-    <script src="jquery-2.2.0.min.js"></script>
-    <script src="js/prefixfree.min.js"></script>
+    <link rel="stylesheet" href="css/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="css/title_effect.css">
+    <script defer src="js/material.min.js"></script>
+    <script src="js/jquery-2.2.0.min.js"></script>
 </head>
 <body bgcolor="#ece4d9">
 <!--标题-->
@@ -24,21 +23,22 @@
 <!--添加条目-->
 <div class="container" style="width: 80%;">
     <form action="#" style="display:inline;">
-        <div class="mdl-textfield mdl-js-textfield" style="width: 14%;">
+        <div class="mdl-textfield mdl-js-textfield" style="width: 14%;margin-right: 1%">
             <input class="mdl-textfield__input" type="text" id="name_input">
-            <label class="mdl-textfield__label" for="name_input">这里起个名字</label>
+            <label class="mdl-textfield__label" for="name_input">&nbsp here input name</label>
         </div>
     </form>
     <form action="#" style="display:inline;">
-        <div class="mdl-textfield mdl-js-textfield" style="width: 41%;">
+        <div class="mdl-textfield mdl-js-textfield" style="width: 40%;margin-right: 1%">
             <input class="mdl-textfield__input" type="text" id="regexp_input">
-            <label class="mdl-textfield__label" for="regexp_input">这里输入正则表达式</label>
+            <label class="mdl-textfield__label" for="regexp_input">&nbsp here code regular expression</label>
         </div>
     </form>
     <form action="#" style="display:inline;">
-        <div class="mdl-textfield mdl-js-textfield" style="width: 41%;">
+        <div class="mdl-textfield mdl-js-textfield" style="width: 40%;">
             <input class="mdl-textfield__input" type="text" id="url_input">
-            <label class="mdl-textfield__label" for="url_input">这里输入目标URL</label>
+            <label class="mdl-textfield__label" for="url_input">&nbsp here input target url,or just input string
+                'shazam'</label>
         </div>
     </form>
     <button class="mdl-button mdl-js-button mdl-button--icon" id="save_button">

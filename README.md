@@ -8,6 +8,6 @@ settings will save and sync with google server if you login in google account.<b
 below is a screen shot：<br/>
 ![image](https://github.com/hellopenggao/url_shazam/blob/master/example_UI.PNG)
 <br/>
-[点击下载](https://raw.githubusercontent.com/hellopenggao/inchina_read_offline_android_doc_helper/master/inchina_read_offline_android_doc_helper.crx)<br/>
-[chrome store](https://chrome.google.com/webstore/detail/android%E7%A6%BB%E7%BA%BF%E6%96%87%E6%A1%A3%E7%95%85%E8%AF%BB%E5%8A%A9%E6%89%8B/gnlmkogaihccfldfiojfdpkjoncmnobc?utm_source=chrome-ntp-icon)
+[点击下载](https://raw.githubusercontent.com/hellopenggao/url_shazam/master/url_shazam.crx)<br/>
+[chrome store](https://chrome.google.com/webstore/detail/urlshazam/dobagipmcophjdpnoihgadgiijfolkee?utm_source=chrome-ntp-icon)
 

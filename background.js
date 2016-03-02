@@ -1,4 +1,4 @@
-//正则表达式列表
+//regular expression table
 var regexpTable = []
 chrome.storage.sync.get({'regexp_data': null}, function (result) {
     var data = result.regexp_data
@@ -8,14 +8,14 @@ chrome.storage.sync.get({'regexp_data': null}, function (result) {
 });
 
 var optionTabId = undefined
-//打开设置页
+//open option page
 chrome.browserAction.onClicked.addListener(function (tab) {
     chrome.tabs.create({'url': chrome.runtime.getURL('option.html')}, function (tab) {
         optionTabId = tab.id
     })
 })
 
-//重定向非地址栏
+//redirect web quest which is not omnibar
 chrome.webRequest.onBeforeRequest.addListener(
     function (info) {
         if (info.url == chrome.runtime.getURL('option.html'))
@@ -55,7 +55,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     },
     ["blocking"]);
 
-//重定向地址栏
+//redirect omnibar
 chrome.webNavigation.onBeforeNavigate.addListener(function (data) {
     if (data.url == chrome.runtime.getURL('option.html'))
         return
@@ -91,7 +91,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(function (data) {
     }
 })
 
-//监听数据变化
+//listen to data change
 chrome.storage.onChanged.addListener(function (changes, sync) {
     for (key in changes) {
         var storageChange = changes[key];
@@ -100,7 +100,7 @@ chrome.storage.onChanged.addListener(function (changes, sync) {
     }
 })
 
-//当设置页面关闭时，整理数组，丢掉空白数据
+//clean up array after option page closed
 chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
     if (tabId == optionTabId) {
         spliceTable(regexpTable)
@@ -111,7 +111,7 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
     console.log(regexpTable)
 })
 
-//递归删除undefined元素
+//delete undefined element by recursion
 function spliceTable(table) {
     for (var i = 0; i < regexpTable.length; i++) {
         if (regexpTable[i] == undefined) {

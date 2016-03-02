@@ -1,4 +1,4 @@
-//装配表格中的行数据成html代码
+//assemble row data in table to html code
 function assembleRow() {
     var isChecked = arguments[0] == null ? "checked" : arguments[0]
     return '<tr style="display: none" id="regexp_item' + arguments[1] + '">'
@@ -16,7 +16,7 @@ function assembleRow() {
         + '</tr>'
 }
 
-//保存按钮的点击事件
+//save button's click event
 $("#save_button").click(function () {
     var name = $("#name_input")[0].value
     var regexp = $("#regexp_input")[0].value
@@ -38,7 +38,7 @@ $("#save_button").click(function () {
         $("#saved_data_table_body tr").first().fadeIn("500")
         data[last] = [name, regexp, url, "checked"]
         chrome.storage.sync.set({'regexp_data': data}, function () {
-            //设置成功，恢复输入区样式
+            //set setting succeed ,recover input style
             $("#name_input")[0].value = ""
             $("#name_input").parent().removeClass("is-dirty")
             $("#regexp_input")[0].value = ""
@@ -75,8 +75,8 @@ onload = function () {
             componentHandler.upgradeElement($("#saved_data_table_body tr:nth-child(1) td label")[0])
             $("#saved_data_table_body tr").first().fadeIn("slow")
         }
-        //设置删除条目
-        //设置每一条表达式独立开关
+        //set delete item
+        //set switch
         for (var i = 0; i < data.length; i++) {
             setSwitchEvent(i)
             setDeleteEvent(i)
@@ -84,7 +84,7 @@ onload = function () {
     });
 }
 
-//每一条表达式独立开关
+//set switch event for expression
 function setSwitchEvent(i) {
     $("#switch-" + i).click(function () {
         //$("#regexp_item"+i)
@@ -100,7 +100,7 @@ function setSwitchEvent(i) {
     })
 }
 
-//删除条目
+//delete item
 function setDeleteEvent(i) {
     $("#delete_item" + i).click(function () {
         var dismissItem = $("#saved_data_table_body").children("#regexp_item" + i)

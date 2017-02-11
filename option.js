@@ -53,10 +53,10 @@ $("#save_button").click(function () {
 
 //example
 var example = [
-    ["example 2", "https://[a-z]*.google.com", "shazam", "unchecked"],
+    ["example 2", "https://[a-z]*.google.com", "redirect", "unchecked"],
     ["example 1", "https://www.google.com.hk", "https://www.google.com", "checked"],
     ["direction for use", "here input a regular expression,which will match omnibox and any request in the page."
-        , "here input redirect url，or input 'shazam' to redirect to the url that back from regular expression.", "unchecked"]
+        , "here input redirect url，or input 'redirect' to redirect to the url that back from regular expression.", "unchecked"]
 ]
 
 onload = function () {

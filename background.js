@@ -29,7 +29,7 @@ chrome.webRequest.onBeforeRequest.addListener(
                     var regexp_url = patt.exec(info.url)
                     if (regexpTable[i][2] == info.url)
                         return {'cancel': false}
-                    else if (regexpTable[i][2] == "shazam") {
+                    else if (regexpTable[i][2] == "redirect") {
                         if (regexp_url == info.url)
                             return {'cancel': false}
                         else {
@@ -70,7 +70,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(function (data) {
                 console.log(regexp_url)
                 if (regexpTable[i][2] == data.url)
                     return
-                else if (regexpTable[i][2] == "shazam") {
+                else if (regexpTable[i][2] == "redirect") {
                     if (regexp_url == data.url)
                         return
                     else {

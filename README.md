@@ -6,8 +6,8 @@ or input 'shazam' to redirect to the url that back from regular expression.<br/>
 settings will save and sync with google server if you login in google account.<br/>
 <br/>
 below is a screen shot：<br/>
-![image](https://github.com/hellopenggao/url_shazam/blob/master/example_UI.PNG)
+![image](./example_UI.PNG)
 <br/>
-[点击下载](https://raw.githubusercontent.com/hellopenggao/url_shazam/master/url_shazam.crx)<br/>
+[点击下载](./url_director.crx)<br/>
 [chrome store](https://chrome.google.com/webstore/detail/urlshazam/dobagipmcophjdpnoihgadgiijfolkee?utm_source=chrome-ntp-icon)
 

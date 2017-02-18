@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "url_redirector",
+  "name": "url redirector",
   "version": "1.4",
   "description": "redirect url through regular expression",
   "icons": {

@@ -9,5 +9,5 @@ below is a screen shot：<br/>
 ![image](./example_UI.PNG)
 <br/>
 [点击下载](./url_redirector.crx)<br/>
-[chrome store]https://chrome.google.com/webstore/detail/url-redirector/dfoapkigebckfdljgmlphpbemdepbgjj?hl=zh-CN)
+[chrome store](https://chrome.google.com/webstore/detail/url-redirector/dfoapkigebckfdljgmlphpbemdepbgjj?hl=zh-CN)
 
